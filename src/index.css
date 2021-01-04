@@ -40,7 +40,7 @@ main {
 }
 
 .logo img {
-    width: 25%;
+    width: 119px;
     margin-left: 20px;
 }
 
@@ -48,13 +48,18 @@ main {
     width: 100%;
     background-image: url('../images/hero-mobile.jpg');
     background-repeat: no-repeat;
+    background-position: center;
     grid-area: image-area;
 }
 
 .info-section {
     grid-area: text-area;
+    width: 312px;
     margin-top: 10px;
     padding: 0px 30px 0px 30px;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
 }
 
 .info-section__texts {
@@ -103,27 +108,39 @@ main {
 }
 
 #email {
-    width: 100%;
-    height: 90%;
+    height: 49px;
+    width: 286px;
     border-radius: 25px;
     background-color: transparent;
-    border-color: hsl(0, 31%, 82%);
+    border-color: var(--desaturated-red);
     outline: none;
+    padding-left: 10px;
+}
+
+#email::placeholder {
+    color: var(--dark-grayish-red)
 }
 
 .form label button {
-    background-image: url('../images/icon-arrow.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: var(--soft-red);
+    
+    background: linear-gradient(to right,  hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    
     border-radius: 25px;
     border: 0;
-    width: 20%;
-    height: 100%;
+    width: 66px;
+    height: 49px;
     position: absolute;
     right: 0;
     outline: none;
 }
+
+.form label button figure {
+    background-image: url('../images/icon-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30px;
+}
+
 .error-icon {
     display: none;
 }
@@ -134,4 +151,43 @@ main {
 
 .visible {
     display: block;
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        grid-template-rows: 15% 85%;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "logo image"
+                             "info image";
+    }
+    .logo {
+        grid-area: logo;
+    }
+
+    .logo img {
+        width: 150px;
+        margin-left: 50px;
+    }
+     
+    .image-hero {
+        grid-area: image;
+        background-image: url('../images/hero-desktop.jpg');
+        background-position-x: center;
+        /* background-position-y: initial; */
+    }
+    .info-section {
+        grid-area: info;
+        margin-top: 0;
+        justify-content: center;
+    }
+
+    .info-section__texts {
+        text-align: start;
+        align-items: flex-start;
+    }
+
+    .info-section__texts--title {
+        margin-top: 0;
+        font-size: 4rem;
+    }
 }
