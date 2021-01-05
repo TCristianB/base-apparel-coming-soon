@@ -25,7 +25,6 @@ main {
     height: 100%;
     display: grid;
     background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 97%) 74%);
-    /* grid-template-rows: 50px 200px 150px; */
     grid-template-rows: 10% 40% 50%;
     grid-template-areas: "logo-area"
                          "image-area"
@@ -122,9 +121,7 @@ main {
 }
 
 .form label button {
-    
     background: linear-gradient(to right,  hsl(0, 80%, 86%), hsl(0, 74%, 74%));
-    
     border-radius: 25px;
     border: 0;
     width: 66px;
@@ -132,6 +129,7 @@ main {
     position: absolute;
     right: 0;
     outline: none;
+    cursor: pointer;
 }
 
 .form label button figure {
@@ -173,12 +171,12 @@ main {
         grid-area: image;
         background-image: url('../images/hero-desktop.jpg');
         background-position-x: center;
-        /* background-position-y: initial; */
     }
     .info-section {
         grid-area: info;
         margin-top: 0;
         justify-content: center;
+        margin-bottom: 15%;
     }
 
     .info-section__texts {
@@ -189,5 +187,41 @@ main {
     .info-section__texts--title {
         margin-top: 0;
         font-size: 4rem;
+    }
+
+    .form {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .info-section {
+        width: 80%;
+        margin-left: 20%;
+        margin-right: 50px;
+    }
+
+    .info-section__texts--title {
+        font-size: 7rem;
+    }
+
+    .info-section__texts--paragraph {
+        font-size: 2.0rem;
+        width: 85%;
+    }
+
+    .form {
+        width: 410px;
+    }
+
+    #email{
+        height: 55px;
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    .form label button {
+        height: 59px;
+        width: 76px;
     }
 }
